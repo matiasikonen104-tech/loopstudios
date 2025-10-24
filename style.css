@@ -47,7 +47,7 @@ body {
 }
 
 .heading-creations {
-  margin-left: 37%;
+  margin-left: 35%;
 }
 
 .button-creations {
@@ -397,17 +397,19 @@ body {
   }
 
   .heading-creations {
-    margin-left: 21% !important;
+    margin-left: 20% !important;
   }
 
   .button-creations {
    margin-left: 31%;
    width: 35%;
   }
+
   .box {
     width: 80%;
     margin-left: 10%;
   }
+  
   .footer .container {
     flex-direction: column !important; /* stack vertically */
     align-items: center !important;    /* center horizontally */
