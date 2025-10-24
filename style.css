@@ -1,0 +1,478 @@
+:root {
+  --font-alata: 'Alata', sans-serif;
+  --font-josefin: 'Josefin Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Alata', sans-serif;
+  font-weight: 400;
+}
+
+body {
+    font-size: 15px;
+}
+
+/* hero full viewport with background image behind navbar */
+.hero {
+  height: 100vh; /* full viewport height */
+  background-image: url('./images/desktop/image-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-desc {
+  width: 48%; /* or whatever size looks best */
+}
+
+
+.navbar {
+  margin-top: 2rem !important;
+  margin-right: 3rem !important;
+  z-index: 1030;
+}
+
+.navbar-nav .nav-link  {
+  color: #f6f2f2 !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #3f0445 !important; /* example: gold/orange highlight */
+  transition: #3f0445 0.3s ease !important;
+}
+
+
+.navbar-brand {
+    margin-left: 5rem !important;
+}
+
+.heading-creations {
+  margin-left: 37%;
+}
+
+.button-creations {
+  margin-left: 42%;
+  margin-top: -35%;
+}
+
+.leftbox {
+  background: url('./images/desktop/image-interactive.jpg') center/cover no-repeat;
+  height: 450px;
+  position: relative;
+  right: -3rem;
+}
+
+.textbox .overlap-box {
+  position: absolute;
+  left: -12.5rem;   /* moves it 3rem over the image */
+  bottom: 0;
+  z-index: 2;
+  max-width: 500px;
+}
+
+
+@media (max-width: 768px) {
+  .textbox .overlap-box {
+    position: static; /* disable overlap on mobile */
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .col-md-6.textbox {
+    position: static;
+    transform: none;
+    margin-top: 1.5rem;
+    max-width: 100%;
+  }
+
+  .col-md-6.img {
+    height: 250px;
+  }
+}
+
+
+/* === HERO SECTION === */
+.hero {
+  height: 100vh;
+  background-image: url('./images/desktop/image-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 9rem;
+}
+
+
+/* MAIN CONTENT SECTION */
+.main-content {
+  margin-top: -3rem; /* moves the whole section 5rem up */
+}
+
+
+.main-content .row {
+  justify-content: center;       /* center horizontally */
+  width: 110%;                    /* width of combined boxes */
+  margin: 0 auto;                /* center the row */
+  position: relative;            /* for absolute positioning of textbox */
+}
+
+
+/* Left image box */
+.img {
+  background-image: url('./images/desktop/image-interactive.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  width: 55%;
+  border-radius: 8px;
+  position: relative;
+  transform: translate(-30%, -40%);  /* 40% left, 30% up */
+}
+
+/* Right text box */
+/* Right text box */
+.textbox {
+  position: absolute;            
+  right: 0;
+  top: 21.5%;                          /* distance from top of hero */
+  transform: translateX(10%);        /* shift 10% right for overlap */
+  max-width: 100%;                     /* increase width to 80% */
+  z-index: 2;
+}
+
+.textbox .border {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  .textbox {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+}
+
+
+
+.custom-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 0;
+}
+
+.creations {
+  position: relative;  /* allows shifting the section */
+  top: -100px;          /* moves the entire section up by 50px */
+}
+
+
+.button-creations {
+    margin-right: 0.9rem !important;
+    margin-top: 3rem !important;
+    background-color: #ffffff;
+    border: 1.5px solid #000000;
+    width: 10%;
+    margin-top: 0; /* remove negative margin */
+
+}
+
+/* keep content aligned with other sections */
+.container-width {
+  max-width: 1100px; /* set to whatever you use site-wide */
+  margin: 0 auto;
+}
+
+/* header styling */
+.heading-creations {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-top: 6rem;
+}
+
+/* button: adjust spacing/appearance */
+.button-creations.btn {
+  padding: .45rem 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-width: 1.5px;
+  margin-top: 6rem;
+}
+
+/* boxes */
+
+
+/* Base box style */
+.box {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 23rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image inside box */
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for the box */
+.box:hover {
+  transform: translateY(-8px) scale(1.02); /* slight lift and zoom */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* subtle shadow */
+}
+
+/* Optional: slightly zoom the image */
+.box:hover img {
+  transform: scale(1.05);
+}
+
+
+/* spacing utilities override (optional) */
+.creations { /* small top/bottom tuning if needed */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* responsive tweak — smaller box height on small screens */
+@media (max-width: 576px) {
+  .box {
+    height: 12rem;
+  }
+}
+
+
+/* box hover effect */
+.project-boxes .col-md-3 > div {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 15rem;
+}
+
+.project-boxes .col-md-3 > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.custom-header {
+  max-width: 900px;
+}
+
+.project-boxes .col-md-3 {
+  max-width: 310px;
+  margin: 0 auto;
+}
+
+.project-boxes .row > [class*="col-"] {
+  margin-bottom: 12rem !important;
+}
+
+.social-icons {
+ transform: translate(-10%, -40%); 
+}
+
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  transform: translate(4.5%, -40%); 
+
+}
+
+.footer ul li a {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.copy {
+  transform: translate(-10%, 25%); 
+}
+
+.footer-menu {
+    transform: translate(4%, 25%); 
+
+}
+
+@media (max-width: 768px) {
+  .main-content .row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+
+  /* Textbox below image without borders/shadows */
+  .main-content .textbox .overlap-box {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    position: static !important;
+    margin-top: 1.5rem !important;
+    text-align: center;
+    width: 80vw;                 /* match image width */
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+
+  /* Hero heading adjustments */
+  .hero-desc {
+    width: 80vw;                 /* same 20% margins */
+    margin-left: 10vw;
+    margin-right: 10vw;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    margin-left: 10% !important;
+  }
+
+  .navbar-toggler {
+    margin-right: -8% !important;
+  }
+  /* Remove container padding on mobile to center content */
+  .main-content-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: hidden; /* remove horizontal scroll */
+  }
+
+  /* Stack columns */
+  .main-content-row {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    margin: 0 !important;
+  }
+
+  /* Left image centered */
+  .leftbox {
+    width: 80vw !important;      /* 80% of viewport width */
+    max-width: 80vw !important;
+    margin: 0 auto !important;   /* center horizontally */
+    margin-right: 18% !important;
+    height: 200px !important;
+    right: auto !important;      /* remove desktop offset */
+    transform: none !important;  /* remove any desktop transforms */
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 8px;
+  }
+
+  /* Text box below image, no border/shadow */
+  .textbox .overlap-box {
+    width: 70vw !important;
+    margin: 1rem auto 0 auto !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    position: static !important;
+    text-align: center !important;
+  }
+
+  /* Hero heading adjustments */
+  .hero-desc {
+    width: 80vw !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  .heading-creations {
+    margin-left: 21% !important;
+  }
+
+  .button-creations {
+   margin-left: 31%;
+   width: 35%;
+  }
+  .box {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .footer .container {
+    flex-direction: column !important; /* stack vertically */
+    align-items: center !important;    /* center horizontally */
+    text-align: center;
+  }
+
+  /* Left column (brand + menu) */
+  .footer-left {
+    margin-bottom: 1.5rem !important; /* spacing between sections */
+  }
+
+  /* Brand */
+  .footer-brand {
+    transform: none !important; /* remove desktop transform */
+    margin-bottom: 1rem;
+  }
+
+  /* Footer menu */
+  .footer-menu {
+    flex-direction: column !important; /* stack links vertically */
+    transform: none !important;        /* remove desktop transform */
+  }
+
+  .footer-menu li {
+    margin-bottom: 0.5rem; /* spacing between links */
+  }
+
+  .footer-menu li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Right column (social icons + copy) */
+  .footer-right {
+    text-align: center !important;
+    transform: none !important; /* remove desktop transform */
+  }
+
+  .social-icons {
+    margin-bottom: 0.5rem !important;
+    transform: none !important; /* remove desktop transform */
+  }
+
+  .copy {
+    transform: none !important; /* remove desktop transform */
+  }
+}
+
+@media (max-width: 992px) {
+  /* Center the collapsed menu on mobile/tablet */
+  .navbar-collapse {
+    justify-content: center !important; /* centers the menu */
+  }
+
+  .navbar-nav {
+    text-align: center; /* center the links */
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 0.5rem; /* optional spacing between items */
+  }
+   .navbar-collapse .nav-link {
+    color: #ffffff !important; /* replace #ffffff with your desired color */
+    font-size: 2rem;
+  }
+
+  .navbar-collapse .nav-link:hover {
+  }
+}
