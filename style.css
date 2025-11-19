@@ -1,480 +1,858 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
-  --font-alata: 'Alata', sans-serif;
-  --font-josefin: 'Josefin Sans', sans-serif;
+    /* Solid Colors */
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey: #D8D8D8;
+
+    /* Blues */
+    --blue-100: #E5EAF1;
+    --blue-50: #F6FAFF;
+
+    /* Gradient 1 */
+    --gradient-1: linear-gradient(180deg,
+            #000000 0%,
+            #000000 60%);
 }
 
-h1, h2, h3 {
-  font-family: 'Alata', sans-serif;
-  font-weight: 400;
+html {
+    font-size: 62.5%;
 }
 
-body {
+/* Text Preset 1 */
+.text-preset-1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    /* Light */
+    font-size: 72px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+/* Text Preset 2 */
+.text-preset-2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    /* Light */
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+/* Text Preset 3 */
+.text-preset-3 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+/* Text Preset 4 */
+.text-preset-4 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    /* Light */
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+/* Text Preset 5 */
+.text-preset-5 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+/* Text Preset 6 */
+.text-preset-6 {
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    /* Regular */
     font-size: 15px;
+    line-height: 165%;
+    letter-spacing: 0px;
 }
 
-/* hero full viewport with background image behind navbar */
+/* Text Preset 7 */
+.text-preset-7 {
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    /* Regular */
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 5px;
+}
+
+/* ⭐ HERO BACKGROUND */
 .hero {
-  height: 100vh; /* full viewport height */
-  background-image: url('./images/desktop/image-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/mobile/image-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    /* stack content vertically */
+    justify-content: flex-start;
+    /* start from top */
+    align-items: center;
+    /* center horizontally */
+    padding-top: 16.1rem;
+    /* space from top */
+    padding-left: 2.8rem;
+    padding-right: 2.8rem;
+    box-sizing: border-box;
 }
 
-.hero-desc {
-  width: 48%; /* or whatever size looks best */
+.hero-content {
+    padding-top: 14.5rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1;
+    border: 2px solid white;
+    padding: 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 
+/* Navbar overlay over hero, scrolls normally */
 .navbar {
-  margin-top: 2rem !important;
-  margin-right: 3rem !important;
-  z-index: 1030;
+    position: absolute;
+    /* sit over hero image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 4rem 2.4rem 0 2.4rem;
+    box-shadow: none !important;
+    backdrop-filter: none;
+    z-index: 10;
+    /* above hero */
 }
 
-.navbar-nav .nav-link  {
-  color: #f6f2f2 !important;
+/* Adjust collapse menu spacing */
+.navbar-collapse {
+    padding-top: 0;
+    /* remove extra top padding */
 }
 
-.navbar-nav .nav-link:hover {
-  color: #3f0445 !important; /* example: gold/orange highlight */
-  transition: #3f0445 0.3s ease !important;
+/* Logo & container */
+.navbar .container-fluid {
+    padding: 0;
+}
+
+/* Links styling */
+.navbar-nav .nav-link {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--blue-100);
+}
+
+/* Hamburger */
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-dark .navbar-toggler-icon {
+    filter: brightness(200%);
+}
+
+.custom-toggler-icon {
+    width: 28px;
+    height: 28px;
+}
+
+.navbar-toggler {
+    border: none !important;
+    padding: 0;
 }
 
 
-.navbar-brand {
-    margin-left: 5rem !important;
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+    /* lower than the navbar-collapse */
+    background: rgba(0, 0, 0, 0.5);
+    /* optional semi-transparent */
 }
 
-.heading-creations {
-  margin-left: 35%;
+.navbar-collapse {
+    z-index: 10;
+    /* keep above overlay */
+    padding-top: 10rem;
+    /* adjust this value to move links down */
 }
 
-.button-creations {
-  margin-left: 42%;
-  margin-top: -35%;
+/* ------Section About------ */
+.about {
+    margin-top: 9.3rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    box-sizing: border-box;
 }
 
-.leftbox {
-  background: url('./images/desktop/image-interactive.jpg') center/cover no-repeat;
-  height: 450px;
-  position: relative;
-  right: -3rem;
+.about-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
 }
 
-.textbox .overlap-box {
-  position: absolute;
-  left: -12.5rem;   /* moves it 3rem over the image */
-  bottom: 0;
-  z-index: 2;
-  max-width: 500px;
-}
-
-
-@media (max-width: 768px) {
-  .textbox .overlap-box {
-    position: static; /* disable overlap on mobile */
-    margin-top: 1.5rem;
-  }
-}
-
-
-/* Responsive behavior */
-@media (max-width: 768px) {
-  .col-md-6.textbox {
-    position: static;
-    transform: none;
-    margin-top: 1.5rem;
+.about-image img {
     max-width: 100%;
-  }
-
-  .col-md-6.img {
-    height: 250px;
-  }
+    height: auto;
+    display: block;
 }
 
 
-/* === HERO SECTION === */
-.hero {
-  height: 100vh;
-  background-image: url('./images/desktop/image-hero.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: 9rem;
+.about-text p {
+    margin-top: 2.9rem;
 }
 
-
-/* MAIN CONTENT SECTION */
-.main-content {
-  margin-top: -3rem; /* moves the whole section 5rem up */
-}
-
-
-.main-content .row {
-  justify-content: center;       /* center horizontally */
-  width: 110%;                    /* width of combined boxes */
-  margin: 0 auto;                /* center the row */
-  position: relative;            /* for absolute positioning of textbox */
-}
-
-
-/* Left image box */
-.img {
-  background-image: url('./images/desktop/image-interactive.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 400px;
-  width: 55%;
-  border-radius: 8px;
-  position: relative;
-  transform: translate(-30%, -40%);  /* 40% left, 30% up */
-}
-
-/* Right text box */
-/* Right text box */
-.textbox {
-  position: absolute;            
-  right: 0;
-  top: 21.5%;                          /* distance from top of hero */
-  transform: translateX(10%);        /* shift 10% right for overlap */
-  max-width: 100%;                     /* increase width to 80% */
-  z-index: 2;
-}
-
-.textbox .border {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-/* RESPONSIVE FIXES */
-@media (max-width: 768px) {
-  .textbox {
-    position: static;
-    transform: none;
-    max-width: 100%;
-    margin-top: 1.5rem;
-  }
-}
-
-
-
-.custom-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    margin-top: 0;
-}
+/* ------Section Crationst------ */
 
 .creations {
-  position: relative;  /* allows shifting the section */
-  top: -100px;          /* moves the entire section up by 50px */
+    margin-top: 9.9rem;
 }
 
-
-.button-creations {
-    margin-right: 0.9rem !important;
-    margin-top: 3rem !important;
-    background-color: #ffffff;
-    border: 1.5px solid #000000;
-    width: 10%;
-    margin-top: 0; /* remove negative margin */
-
+.creations h2 {
+    margin-top: 5.5rem;
+    font-weight: 400;
 }
 
-/* keep content aligned with other sections */
-.container-width {
-  max-width: 1100px; /* set to whatever you use site-wide */
-  margin: 0 auto;
-}
-
-/* header styling */
-.heading-creations {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: .5px;
-  margin-top: 6rem;
-}
-
-/* button: adjust spacing/appearance */
-.button-creations.btn {
-  padding: .45rem 1.05rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-width: 1.5px;
-  margin-top: 6rem;
-}
-
-/* boxes */
-
-
-/* Base box style */
 .box {
-  margin-top: 1.5rem;
-  overflow: hidden;
-  border-radius: 0.5rem;
-  height: 23rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f6f6f6;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    /* allows overlay and text positioning */
+    overflow: hidden;
 }
 
-/* Image inside box */
 .box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
+    width: 100%;
+    display: block;
 }
 
-/* Hover effect for the box */
-.box:hover {
-  transform: translateY(-8px) scale(1.02); /* slight lift and zoom */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* subtle shadow */
+/* Dark overlay over image only */
+.box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* semi-transparent black */
+    z-index: 1;
+    /* below text */
 }
 
-/* Optional: slightly zoom the image */
-.box:hover img {
-  transform: scale(1.05);
+/* Text above overlay */
+.box-text {
+    position: absolute;
+    bottom: 2.6rem;
+    left: 1.9rem;
+    width: 8rem;
+    height: 4.8rem;
+    color: #fff;
+    text-align: left;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-weight: 400;
+    z-index: 2;
+    /* on top of overlay */
 }
 
-
-/* spacing utilities override (optional) */
-.creations { /* small top/bottom tuning if needed */
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.creations button {
+    width: 15.7rem;
+    height: 4rem;
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    /* Regular */
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 5px;
+    margin-bottom: 9rem;
 }
 
-/* responsive tweak — smaller box height on small screens */
-@media (max-width: 576px) {
-  .box {
-    height: 12rem;
-  }
+/* ------FOOTER------ */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* center everything horizontally */
+    padding: 2.5rem 2.4rem 3rem;
+    /* top 5.5rem from footer edge, sides 2.4rem, bottom 3rem */
+    background-color: var(--black);
+    gap: 5rem;
+    /* space between logo and links */
 }
 
-
-/* box hover effect */
-.project-boxes .col-md-3 > div {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 15rem;
+/* Logo centered */
+.footer-left .logo {
+    margin: 0;
+    /* no extra margin */
 }
 
-.project-boxes .col-md-3 > div:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Links stacked vertically under logo */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    /* column for mobile */
+    gap: 2rem;
+    /* spacing between links */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+    /* center links under logo */
+    margin-top: 3rem;
+
 }
 
-.custom-header {
-  max-width: 900px;
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
 }
 
-.project-boxes .col-md-3 {
-  max-width: 310px;
-  margin: 0 auto;
-}
-
-.project-boxes .row > [class*="col-"] {
-  margin-bottom: 12rem !important;
-}
-
+/* Social icons centered under links */
 .social-icons {
- transform: translate(-10%, -40%); 
-}
-
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-.footer-brand {
-  font-weight: 700;
-  font-size: 1.5rem;
-  transform: translate(4.5%, -40%); 
-
-}
-
-.footer ul li a {
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.copy {
-  transform: translate(-10%, 25%); 
-}
-
-.footer-menu {
-    transform: translate(4%, 25%); 
-
-}
-
-@media (max-width: 768px) {
-  .main-content .row {
-    flex-wrap: wrap;
+    display: flex;
     justify-content: center;
-  }
-  
-
-  /* Textbox below image without borders/shadows */
-  .main-content .textbox .overlap-box {
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    padding: 0 !important;
-    position: static !important;
-    margin-top: 1.5rem !important;
-    text-align: center;
-    width: 80vw;                 /* match image width */
-    margin-left: 10vw;
-    margin-right: 10vw;
-  }
-
-  /* Hero heading adjustments */
-  .hero-desc {
-    width: 80vw;                 /* same 20% margins */
-    margin-left: 10vw;
-    margin-right: 10vw;
-    text-align: center;
-  }
+    gap: 2rem;
+    margin-top: 5rem;
+    /* spacing from links */
 }
 
-@media (max-width: 768px) {
-  .navbar-brand {
-    margin-left: 10% !important;
-  }
-
-  .navbar-toggler {
-    margin-right: -8% !important;
-  }
-  /* Remove container padding on mobile to center content */
-  .main-content-container {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    overflow-x: hidden; /* remove horizontal scroll */
-  }
-
-  /* Stack columns */
-  .main-content-row {
-    flex-wrap: wrap;
-    justify-content: center !important;
-    margin: 0 !important;
-  }
-
-  /* Left image centered */
-  .leftbox {
-    width: 80vw !important;      /* 80% of viewport width */
-    max-width: 80vw !important;
-    margin: 0 auto !important;   /* center horizontally */
-    margin-right: 18% !important;
-    height: 200px !important;
-    right: auto !important;      /* remove desktop offset */
-    transform: none !important;  /* remove any desktop transforms */
-    background-size: cover !important;
-    background-position: center !important;
-    border-radius: 8px;
-  }
-
-  /* Text box below image, no border/shadow */
-  .textbox .overlap-box {
-    width: 70vw !important;
-    margin: 1rem auto 0 auto !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    padding: 0 !important;
-    position: static !important;
-    text-align: center !important;
-  }
-
-  /* Hero heading adjustments */
-  .hero-desc {
-    width: 80vw !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  .heading-creations {
-    margin-left: 20% !important;
-  }
-
-  .button-creations {
-   margin-left: 31%;
-   width: 35%;
-  }
-
-  .box {
-    width: 80%;
-    margin-left: 10%;
-  }
-  
-  .footer .container {
-    flex-direction: column !important; /* stack vertically */
-    align-items: center !important;    /* center horizontally */
+/* Copyright under social icons */
+.copyright {
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 165%;
     text-align: center;
-  }
-
-  /* Left column (brand + menu) */
-  .footer-left {
-    margin-bottom: 1.5rem !important; /* spacing between sections */
-  }
-
-  /* Brand */
-  .footer-brand {
-    transform: none !important; /* remove desktop transform */
-    margin-bottom: 1rem;
-  }
-
-  /* Footer menu */
-  .footer-menu {
-    flex-direction: column !important; /* stack links vertically */
-    transform: none !important;        /* remove desktop transform */
-  }
-
-  .footer-menu li {
-    margin-bottom: 0.5rem; /* spacing between links */
-  }
-
-  .footer-menu li:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Right column (social icons + copy) */
-  .footer-right {
-    text-align: center !important;
-    transform: none !important; /* remove desktop transform */
-  }
-
-  .social-icons {
-    margin-bottom: 0.5rem !important;
-    transform: none !important; /* remove desktop transform */
-  }
-
-  .copy {
-    transform: none !important; /* remove desktop transform */
-  }
+    margin-top: 2.7rem;
+    /* spacing under social icons */
 }
 
-@media (max-width: 992px) {
-  /* Center the collapsed menu on mobile/tablet */
-  .navbar-collapse {
-    justify-content: center !important; /* centers the menu */
-  }
 
-  .navbar-nav {
-    text-align: center; /* center the links */
-  }
 
-  .navbar-nav .nav-item {
-    margin-bottom: 0.5rem; /* optional spacing between items */
-  }
-   .navbar-collapse .nav-link {
-    color: #ffffff !important; /* replace #ffffff with your desired color */
-    font-size: 2rem;
-  }
+/* ------Tablet------ */
 
-  .navbar-collapse .nav-link:hover {
-  }
+/* Tablet layout: 768px and up */
+@media (min-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    html {
+        overflow-x: hidden;
+    }
+
+    .navbar .nav-link {
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        margin-bottom: 2.5rem;
+        color: var(--white);
+        margin-left: 7.3rem;
+    }
+
+    .navbar .container-fluid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+
+    .hero {
+        padding-top: 13rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero-content {
+        padding-top: 14.5rem;
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 300;
+        font-size: 72px;
+        line-height: 100%;
+        letter-spacing: 0px;
+    }
+
+    .about {
+        margin-top: 9.3rem;
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+        box-sizing: border-box;
+    }
+
+    .about h2 {
+        margin-top: 5.5rem;
+        font-weight: 400;
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 300;
+        font-size: 48px;
+        line-height: 100%;
+        letter-spacing: 0px;
+    }
+
+    .about p {
+        font-family: "Alata", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 165%;
+        letter-spacing: 0px;
+    }
+
+    .creations {
+        margin-top: 9.2rem;
+        margin-left: 7.3rem;
+        margin-right: 7.3rem;
+    }
+
+    .creations h2 {
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 300;
+        /* Light */
+        font-size: 48px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        margin-top: 4.4rem;
+        margin-bottom: 3.7rem;
+    }
+
+    .box {
+        margin-bottom: 2rem;
+        margin-left: 2.8rem;
+        margin-right: 2.8rem;
+    }
+
+    .creations button {
+        width: 15.7rem;
+        height: 4rem;
+        font-family: "text-preset-7", sans-serif;
+    }
+    .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 2.7rem;
+        /* vertical gap between top and bottom rows */
+        background-color: var(--black);
+    }
+
+    /* TOP ROW: Logo left, social right */
+    .footer-top {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+
+    .footer-left .logo {
+        position: absolute;   /* <-- REQUIRED */
+    left: 8.2rem;         /* now this works */
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin-top:1rem;
+    }
+
+    .footer-right .social-icons {
+        position: absolute;
+        right: 7.2rem;
+        /* distance from right edge for desktop */
+        display: flex;
+        gap: 2rem;
+        margin-top:-1.4rem;
+    }
+
+    /* BOTTOM ROW: Links left, copyright right */
+    .footer-bottom {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Links row */
+   .footer-links {
+    margin-top: 2rem;
+    position: absolute;   /* <-- REQUIRED */
+    left: 8.2rem;         /* now this works */
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+     margin-top: 5.4rem;
+}
+
+    .footer-links li a {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    /* Copyright text */
+    .copyright {
+        position: static;
+    margin-right: -48.2rem!important;
+    top: -4.5rem;   /* <-- moves it DOWN */
+    }
+
+    .social-icons {
+        margin-top: -4rem;
+    }
+
+    
+}
+
+
+
+/* Desktop layout: 1200px and up (adjust if needed) */
+@media (min-width: 1200px) {
+
+    /* Navbar container adjustments */
+    .navbar .container-fluid {
+        padding-left: 15.2rem !important;
+        /* left edge spacing */
+        padding-right: 15.2rem !important;
+        /* right edge spacing */
+    }
+
+    /* Logo */
+    .navbar-brand {
+        margin-top: 2.8rem;
+        /* 2.8rem from top */
+        margin: 0;
+    }
+
+    /* Nav links */
+    .navbar-nav {
+        margin-top: 2.8rem;
+        /* align with logo */
+    }
+
+    .navbar-nav .nav-link {
+        font-family: "Alata", sans-serif;
+        font-weight: 400;
+        /* Regular */
+        font-size: 15px;
+        line-height: 165%;
+        letter-spacing: 0px;
+        color: var(--white);
+        text-transform: uppercase;
+        margin-left: 3rem;
+        /* space between links */
+    }
+
+    /* Remove extra top padding from navbar collapse */
+    .navbar-collapse {
+        padding-top: 0;
+    }
+
+    .hero-content {
+        width: 65rem;
+        height: 2.7rem;
+        margin-left: -64rem !important;
+    }
+
+    /* About Section */
+    .about {
+        position: relative;
+        /* container for absolute positioning */
+        width: 100%;
+        margin-top: 15.5rem;
+        box-sizing: border-box;
+        height: 50rem;
+        /* same as image height to contain absolute text */
+    }
+
+    .about-image {
+        width: 50%;
+        height: 50rem;
+        background-image: url("images/desktop/image-interactive.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: 25.8rem;
+        /* distance from left */
+        top: 0;
+    }
+
+    .about-image img {
+        display: none;
+    }
+
+    .about-text {
+        width: 44rem;
+        height: 30rem;
+        background-color: var(--white);
+        padding: 2rem;
+        box-sizing: border-box;
+        position: absolute;
+        top: 17rem;
+        /* adjust vertical overlap */
+        right: 16.8rem;
+        /* distance from right */
+    }
+
+    .about-text h2 {
+        font-family: "Josefin Sans", sans-serif;
+        font-weight: 300;
+        font-size: 48px;
+        line-height: 100%;
+    }
+
+    .about-text p {
+        font-family: "Alata", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 165%;
+        margin-top: 2rem;
+    }
+
+    .creations.container {
+        max-width: calc(25.6rem * 4 + 3 * 4rem + 2 * 16.8rem);
+        /* 4 boxes + 3 gaps + padding */
+        margin: 0 auto;
+        padding-left: 16.8rem;
+        padding-right: 16.8rem;
+        box-sizing: border-box;
+        margin-top: 17.4rem;
+    }
+
+    .creations .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4rem;
+        /* slightly bigger gap */
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: flex-start;
+    }
+
+    .creations .col-12.col-lg-3 {
+        flex: 0 0 25.6rem;
+        max-width: 25.6rem;
+        height: 45rem;
+        margin-bottom: 4rem;
+        position: relative;
+    }
+
+    /* Hide original mobile images */
+    .creations .col-12.col-lg-3 img {
+        display: none;
+    }
+
+    /* Desktop background images */
+    .creations .col-12.col-lg-3:nth-child(1) .box {
+        background-image: url("images/desktop/image-curiosity.jpg");
+    }
+
+    .creations .col-12.col-lg-3:nth-child(2) .box {
+        background-image: url("images/desktop/image-deep-earth.jpg");
+    }
+
+    .creations .col-12.col-lg-3:nth-child(3) .box {
+        background-image: url("images/desktop/image-fisheye.jpg");
+    }
+
+    .creations .col-12.col-lg-3:nth-child(4) .box {
+        background-image: url("images/desktop/image-from-above.jpg");
+    }
+
+    .creations .col-12.col-lg-3:nth-child(5) .box {
+        background-image: url("images/desktop/image-night-arcade.jpg");
+    }
+
+    .creations .col-12.col-lg-3:nth-child(6) .box {
+        background-image: url("images/desktop/image-pocket-borealis.jpg");
+    }
+
+    .creations .col-12.col-lg-3:nth-child(7) .box {
+        background-image: url("images/desktop/image-soccer-team.jpg");
+    }
+
+    .creations .col-12.col-lg-3:nth-child(8) .box {
+        background-image: url("images/desktop/image-grid.jpg");
+    }
+
+    /* Box styling */
+    .creations .box {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    /* Overlay */
+    .creations .box .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+
+    /* Text above overlay */
+    .creations .box .box-text {
+        position: absolute;
+        bottom: 2.6rem;
+        left: 1.9rem;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 400;
+        z-index: 2;
+    }
+
+    .creations .text-center {
+        display: flex;
+        justify-content: flex-start;
+        /* left align */
+        padding-left: 3rem;
+        /* same as container padding */
+        padding-right: 0;
+        margin-top: 2rem;
+    }
+
+    .creations .text-center button {
+        display: block;
+        /* make button a block element */
+        margin: 0 auto;
+        /* center horizontally */
+        margin-bottom: 10rem;
+        margin-top: 5rem;
+    }
+
+     .footer {
+        display: flex;
+        flex-direction: column;
+        gap: 2.7rem;
+        /* vertical gap between top and bottom rows */
+        background-color: var(--black);
+    }
+
+    /* TOP ROW: Logo left, social right */
+    .footer-top {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+
+    .footer-left .logo {
+        position: absolute;   /* <-- REQUIRED */
+    left: 8.2rem;         /* now this works */
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin-top:1rem;
+    }
+
+    .footer-right .social-icons {
+        position: absolute;
+        right: 7.2rem;
+        /* distance from right edge for desktop */
+        display: flex;
+        gap: 2rem;
+        margin-top:-1.4rem;
+    }
+
+    /* BOTTOM ROW: Links left, copyright right */
+    .footer-bottom {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Links row */
+   .footer-links {
+    margin-top: 2rem;
+    position: absolute;   /* <-- REQUIRED */
+    left: 8.2rem;         /* now this works */
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+     margin-top: 5.4rem;
+}
+
+    .footer-links li a {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    /* Copyright text */
+    .copyright {
+        position: static;
+    margin-right: -118.2rem!important;
+    top: -4.5rem;   /* <-- moves it DOWN */
+    }
+
+    .social-icons {
+        margin-top: -4rem;
+    }
+
 }
